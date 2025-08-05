@@ -1,8 +1,18 @@
+#!/bin/bash
+
 echo "Memastikan dependensi Node.js dan npm..."
-if ! command -v node &> /dev/null || ! command -v npm &> /dev/null; then
-    echo "Node.js dan npm belum terpasang. Silakan install terlebih dahulu."
+if ! command -v node &> /dev/null; then
+    echo "Node.js belum terpasang. Silakan install terlebih dahulu."
     exit 1
 fi
+
+if ! command -v npm &> /dev/null; then
+    echo "npm belum terpasang. Silakan install terlebih dahulu."
+    exit 1
+fi
+
+echo "Node.js versi: $(node -v)"
+echo "npm versi: $(npm -v)"
 
 echo "Menginstall dependensi npm..."
 npm install node-fetch sleep
