@@ -1,53 +1,37 @@
 # Kali Tools Downloader
 
-Repositori ini berisi script untuk mengunduh berbagai paket/tools Kali Linux secara otomatis dari GitLab.
+Kali Tools Downloader adalah repositori yang berisi script otomatis untuk mengunduh berbagai paket/tools Kali Linux langsung dari GitLab. Dengan script ini, Anda dapat menghemat waktu dan tenaga dalam proses instalasi banyak tools sekaligus, baik untuk keperluan pentesting, forensik, maupun administrasi jaringan.
 
-## Struktur File
+## Fitur Utama
 
-- **kalifinder.js**  
-  Script Node.js untuk mengambil daftar paket dari GitLab dan menghasilkan perintah `git clone` ke file `data1.sh`.
+- Mengambil daftar paket Kali Linux dari GitLab secara otomatis.
+- Mengelompokkan paket berdasarkan kategori fungsinya.
+- Menghasilkan script Bash untuk mengunduh semua repository sekaligus.
+- Instalasi mudah hanya dengan satu perintah.
 
-- **data1.sh**  
-  Script Bash berisi perintah `git clone` untuk mengunduh semua repository paket Kali Linux.
+## Cara Instalasi
 
-- **package_names**  
-  Daftar nama paket yang dikelompokkan berdasarkan kategori fungsinya.
+1. **Clone repositori ini**
+   ```bash
+   git clone https://github.com/Bangkah/kali-linux-tools.git
+   cd kali-linux-tools
+   ```
 
-## Cara Penggunaan
+2. **Jalankan script instalasi**
+   ```bash
+   chmod +x install.sh
+   ./install.sh
+   ```
 
-### 1. Install Dependensi
-
-Pastikan Node.js dan npm sudah terpasang.  
-Install dependensi yang diperlukan:
-
-```bash
-npm install node-fetch sleep
-```
-
-### 2. Generate Script Clone
-
-Jalankan script Node.js untuk mengambil daftar paket dan membuat file `data1.sh`:
-
-```bash
-node kalifinder.js
-```
-
-### 3. Jalankan Script Bash
-
-Setelah file `data1.sh` dibuat, jalankan untuk mengunduh semua repository:
-
-```bash
-bash data1.sh
-```
+   Script akan:
+   - Memastikan Node.js dan npm sudah terpasang.
+   - Menginstall dependensi yang diperlukan.
+   - Mengambil daftar paket dari GitLab dan membuat file `data1.sh`.
+   - Menjalankan `data1.sh` untuk mengunduh semua repository paket Kali Linux.
 
 > **Catatan:**  
-> Pastikan koneksi internet stabil dan ruang penyimpanan cukup.
-
-### 4. (Opsional) Gunakan Kategori Paket
-
-File `package_names` dapat digunakan untuk memilih atau mengelompokkan paket sesuai kategori.  
-Anda bisa membuat script tambahan untuk mengunduh paket berdasarkan kategori tertentu.
+> Pastikan koneksi internet stabil dan ruang penyimpanan cukup sebelum menjalankan script.
 
 ## Kontribusi
 
-Silakan pull request atau buka issue jika ada saran atau perbaikan.
+Silakan pull request atau buka issue jika ada saran, perbaikan, atau ingin menambah kategori/tools
